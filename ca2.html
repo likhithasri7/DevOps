@@ -4,24 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dance Class Registration Form</title>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Dance Class Registration Form</h1>
-    <form action="process.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" name="fname" id="fname" placeholder="First" required>
-        <input type="text" name="lname" id="lname" placeholder="Last" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" placeholder="email"required>
-        <label for="mobile">Phone:</label>
-        <input type="text" name="mobile" id="mobile" placeholder="###########" required><br><br>
-        <label for="firstclass">Is this your first class?</label><br>
-        <input type="checkbox" name="yes" id="yes" >Yes,I'm new here</input><br>
-        <input type="checkbox" name="no" id="no">No.I've alredy attended classes</input><br><br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="form-container">
+        <h1>Dance Class Registration</h1>
+        <form action="process.php" method="post">
+            <div class="form-group">
+                <label for="fname">Name:</label>
+                <div class="name-fields">
+                    <input type="text" name="fname" id="fname" placeholder="First" required>
+                    <input type="text" name="lname" id="lname" placeholder="Last" required>
+                </div>
+            </div>
 
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="example@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Phone:</label>
+                <input type="tel" name="mobile" id="mobile" placeholder="1234567890" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Is this your first class?</label>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="firstclass" value="yes" required> Yes, I'm new here</label>
+                    <label><input type="radio" name="firstclass" value="no"> No, I've already attended</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="submit-btn">
+            </div>
+        </form>
+    </div>
 </body>
-
 </html>
